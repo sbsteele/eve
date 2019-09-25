@@ -6,7 +6,7 @@ WORKDIR /dt
 RUN apk add --no-cache dtc
 RUN for i in *dts ; do dtc -O dtb -o ${i%%.dts}.dtb -I dts $i ; done
 
-RUN [ `uname -m` = aarch64 ] || rm -f /dt/*
+#RUN [ `uname -m` = aarch64 ] || rm -f /dt/*
 
 FROM scratch
 ENTRYPOINT []
